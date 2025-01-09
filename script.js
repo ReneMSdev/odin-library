@@ -35,10 +35,14 @@ function renderLibrary() {
     const row = document.createElement('tr');
 
     row.innerHTML = `
-      <td>${book.title}</td>
-      <td>${book.author}</td>
-      <td>${book.pages}</td>
-      <td>${book.read}</td>
+      <td class="title">${book.title}</td>
+      <td class="author">${book.author}</td>
+      <td class="pages">${book.pages}</td>
+      <td class="read">
+        ${book.read}
+        <button class="toggle-read" onclick="toggleRead(${index})">
+          <i class="fa-solid ${book.read === 'Yes' ? 'fa-toggle-on' : 'fa-toggle-off'}"></i>
+      </td>
       <td>
         <button class="remove" onclick="removeBook(${index})"><i class="fa-solid fa-xmark"></i></button>
       </td>
@@ -50,5 +54,11 @@ function renderLibrary() {
 
 function removeBook(index) {
   myLibrary.splice(index, 1);
+  renderLibrary();
+}
+
+function toggleRead(index) {
+  const book = myLibrary[index];
+  book.read = book.read === 'Yes' ? 'No' : 'Yes';
   renderLibrary();
 }

@@ -9,6 +9,10 @@ body {
   padding: 30px;
 }
 
+button {
+  border: none;
+}
+
 /* FORM STYLES */
 .form-card {
   margin-top: 30px;
@@ -45,7 +49,7 @@ input[type="checkbox"] {
   margin-right: auto;
   transform: scale(1.3);
 }
-button {
+#submit {
   grid-column: span 4;
   background-color: rgb(93, 115, 203);
   color: white;
@@ -53,11 +57,10 @@ button {
   padding: 10px 30px;
   justify-self: center;
   border-radius: 8px;
-  border: none;
   cursor: pointer;
   margin: 20px 0;
 }
-button:hover {
+#submit:hover {
   background-color: rgb(73, 90, 158);
 }
 
@@ -66,21 +69,56 @@ button:hover {
   margin-top: 30px;
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 th, td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  overflow: hidden;
 }
 th {
   background-color: #f4f4f4;
 }
 
+/* adjustment for column widths */
+th.title, td.title {
+  width: 30%;
+}
+th.author, td.author {
+  width: 30%;
+}
+th.read, td.read {
+  width: 15%;
+}
+th.pages, td.pages,
+th.actions, td.actions {
+  width: 10%;
+  text-align: center;
+}
+
+td.read {
+  text-align: center;
+}
+
 .remove {
-  padding: 10px;
+  padding: 5px 9px;
+  border-radius: 25px;
   background-color: rgb(220, 59, 59);
+  color: white;
+  cursor: pointer;
 }
 
 .remove:hover {
   background-color: rgb(175, 47, 47);
 }
+
+.toggle-read {
+  padding: 2px;
+  padding-left: 10px;
+  background-color: white;
+  color: rgb(93, 115, 203);
+  font-size: 28px;
+  cursor: pointer;
+}
+
