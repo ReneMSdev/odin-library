@@ -40,7 +40,7 @@ function renderLibrary() {
       <td>${book.pages}</td>
       <td>${book.read}</td>
       <td>
-        <button onclick="removeBook(${index})">Remove</button>
+        <button class="remove" onclick="removeBook(${index})"><i class="fa-solid fa-xmark"></i></button>
       </td>
     `;
 

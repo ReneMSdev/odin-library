@@ -75,3 +75,12 @@ th, td {
 th {
   background-color: #f4f4f4;
 }
+
+.remove {
+  padding: 10px;
+  background-color: rgb(220, 59, 59);
+}
+
+.remove:hover {
+  background-color: rgb(175, 47, 47);
+}
