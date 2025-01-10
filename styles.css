@@ -94,11 +94,6 @@ th.read, td.read {
 th.pages, td.pages,
 th.actions, td.actions {
   width: 10%;
-  text-align: center;
-}
-
-td.read {
-  text-align: center;
 }
 
 .remove {
